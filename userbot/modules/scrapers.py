@@ -43,8 +43,8 @@ from telethon.tl.types import DocumentAttributeAudio
 from userbot.modules.upload_download import progress, humanbytes, time_formatter
 
 CARBONLANG = "auto"
-TTS_LANG = "en"
-TRT_LANG = "en"
+TTS_LANG = "pl"
+TRT_LANG = "pl"
 
 
 @register(outgoing=True, pattern="^\.crblang (.*)")
