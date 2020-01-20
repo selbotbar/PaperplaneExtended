@@ -43,7 +43,7 @@ async def get_weather(weather):
 
     if not OWM_API:
         await weather.edit(
-            "`Get an API key from` https://openweathermap.org/ `first.`")
+            "`Uzyskaj klucz API z` https://openweathermap.org/`.`")
         return
 
     APPID = OWM_API
@@ -53,7 +53,8 @@ async def get_weather(weather):
         CITY = DEFCITY
         if not CITY:
             await weather.edit(
-                "`Please specify a city or set one as default using the WEATHER_DEFCITY config variable.`"
+                "`
+Podaj miasto lub ustaw je jako domyślne, używając zmiennej konfiguracyjnej WEATHER_DEFCITY.`"
             )
             return
     else:
@@ -123,15 +124,15 @@ async def get_weather(weather):
         return xx
 
     await weather.edit(
-        f"**Temperature:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
+        f"**Temperatura:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
         +
         f"**Min. Temp.:** `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
         +
         f"**Max. Temp.:** `{celsius(max_temp)}°C | {fahrenheit(max_temp)}°F`\n"
-        + f"**Humidity:** `{humidity}%`\n" +
-        f"**Wind:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
-        f"**Sunrise:** `{sun(sunrise)}`\n" +
-        f"**Sunset:** `{sun(sunset)}`\n\n\n" + f"**{desc}**\n" +
+        + f"**Wilgotność:** `{humidity}%`\n" +
+        f"**Wiatr:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
+        f"**Wschód słońca:** `{sun(sunrise)}`\n" +
+        f"**Zachód słońca:** `{sun(sunset)}`\n\n\n" + f"**{desc}**\n" +
         f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
 
 
