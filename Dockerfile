@@ -47,6 +47,7 @@ RUN apk add --no-cache --update \
     sqlite-dev \
     sudo \
     zlib-dev \
+    mc \
     python-dev
 
 
