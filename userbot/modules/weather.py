@@ -91,7 +91,7 @@ async def get_weather(weather):
     min_temp = result['main']['temp_min']
     max_temp = result['main']['temp_max']
     desc = result['weather'][0]
-    desc = desc['main']
+    desc = desc['description']
     country = result['sys']['country']
     sunrise = result['sys']['sunrise']
     sunset = result['sys']['sunset']
