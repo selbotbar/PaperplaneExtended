@@ -77,7 +77,7 @@ async def get_weather(weather):
                 return
             CITY = newcity[0].strip() + "," + countrycode.strip()
 
-    url = f'https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={APPID}'
+    url = f'https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={APPID}&lang=pl'
     request = get(url)
     result = json.loads(request.text)
 
