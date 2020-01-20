@@ -43,7 +43,7 @@ async def get_weather(weather):
 
     if not OWM_API:
         await weather.edit(
-            "`Uzyskaj klucz API z` https://openweathermap.org/`.`")
+            "`Get an API key from` https://openweathermap.org/ `first.`")
         return
 
     APPID = OWM_API
@@ -53,8 +53,7 @@ async def get_weather(weather):
         CITY = DEFCITY
         if not CITY:
             await weather.edit(
-                "`
-Podaj miasto lub ustaw je jako domyślne, używając zmiennej konfiguracyjnej WEATHER_DEFCITY.`"
+                "`Please specify a city or set one as default using the WEATHER_DEFCITY config variable.`"
             )
             return
     else:
