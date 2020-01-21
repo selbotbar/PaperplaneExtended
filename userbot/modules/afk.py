@@ -150,8 +150,8 @@ async def set_afk(afk_e):
         if afk_db:
             addgvar("AFK_REASON", string)
         AFKREASON = string
-        await afk_e.edit(f"Going AFK!\
-        \nReason: `{string}`")
+        await afk_e.edit(f"Ide afczyć kurwa!\
+        \nNie ma mnie bo: `{string}`")
     else:
         await afk_e.edit("Going AFK!")
     if BOTLOG:
