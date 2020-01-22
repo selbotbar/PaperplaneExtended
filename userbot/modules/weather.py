@@ -99,7 +99,7 @@ async def get_weather(weather):
     winddir = result['wind']['deg']
 
     ctimezone = tz(c_tz[country][0])
-    time = datetime.now(ctimezone).strftime("%A, %I:%M %p")
+    time = datetime.now(ctimezone).strftime("%A, %H:%M")
     fullc_n = c_n[f"{country}"]
 
     dirs = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
@@ -131,7 +131,7 @@ async def get_weather(weather):
         + f"**Wilgotność:** `{humidity}%`\n" +
         f"**Wiatr:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
         f"**Wschód słońca:** `{sun(sunrise)}`\n" +
-        f"**Zachód słońca:** `{sun(sunset)}`\n\n\n" + f"**{desc}**\n" +
+        f"**Zachód słońca:** `{sun(sunset)}`\n\n" + f"**{desc}**\n\n" +
         f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
 
 
