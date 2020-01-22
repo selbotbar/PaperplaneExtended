@@ -61,8 +61,10 @@ RUN python3 -m ensurepip \
 #
 # Clone repo and prepare working directory
 #
-RUN mkdir /root/userbot/bin/
+WORKDIR /root/
+RUN mkdir userbot
 WORKDIR /root/userbot/
+RUN mkdir bin
 COPY . .
 
 #
