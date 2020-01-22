@@ -47,7 +47,7 @@ async def time_func(tdata):
     """ For .time command, return the time of
         1. The country passed as an argument,
         2. The default userbot country(set it by using .settime),
-        3. The server where the userbot runs.
+        3. The server wtutaj the userbot runs.
     """
     con = tdata.pattern_match.group(1).title()
     tz_num = tdata.pattern_match.group(2)
@@ -66,7 +66,7 @@ async def time_func(tdata):
         tz_num = TZ_NUMBER
         timezones = await get_tz(COUNTRY)
     else:
-        await tdata.edit(f"`It's`  **{dt.now().strftime(t_form)}**  `here.`")
+        await tdata.edit(f"`Jest`  **{dt.now().strftime(t_form)}**  `tutaj.`")
         return
 
     if not timezones:
@@ -96,12 +96,12 @@ async def time_func(tdata):
 
     if c_name != COUNTRY:
         await tdata.edit(
-            f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+            f"`Jest`  **{dtnow}**  `w {c_name}({time_zone} strefie czasowej).`")
         return
 
     elif COUNTRY:
-        await tdata.edit(f"`It's`  **{dtnow}**  `here, in {COUNTRY}"
-                         f"({time_zone} timezone).`")
+        await tdata.edit(f"`Jest`  **{dtnow}**  `tutaj, w {COUNTRY}"
+                         f"({time_zone} strefie czasowej).`")
         return
 
 
@@ -111,7 +111,7 @@ async def date_func(dat):
     """ For .date command, return the date of
         1. The country passed as an argument,
         2. The default userbot country(set it by using .settime),
-        3. The server where the userbot runs.
+        3. The server wtutaj the userbot runs.
     """
     con = dat.pattern_match.group(1).title()
     tz_num = dat.pattern_match.group(2)
@@ -130,7 +130,7 @@ async def date_func(dat):
         tz_num = TZ_NUMBER
         timezones = await get_tz(COUNTRY)
     else:
-        await dat.edit(f"`It's`  **{dt.now().strftime(d_form)}**  `here.`")
+        await dat.edit(f"`Jest`  **{dt.now().strftime(d_form)}**  `tutaj.`")
         return
 
     if not timezones:
@@ -160,11 +160,11 @@ async def date_func(dat):
 
     if c_name != COUNTRY:
         await dat.edit(
-            f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+            f"`Jest`  **{dtnow}**  `w {c_name}({time_zone} timezone).`")
         return
 
     elif COUNTRY:
-        await dat.edit(f"`It's`  **{dtnow}**  `here, in {COUNTRY}"
+        await dat.edit(f"`Jest`  **{dtnow}**  `tutaj, w {COUNTRY}"
                        f"({time_zone} timezone).`")
         return
 
