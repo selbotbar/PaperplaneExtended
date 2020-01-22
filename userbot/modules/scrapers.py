@@ -598,12 +598,8 @@ async def download_video(v_url):
             True,
             'nocheckcertificate':
             True,
-            'postprocessors': [{
-                'key': 'FFmpegVideoConvertor',
-                'preferedformat': 'mp4'
-            }],
             'outtmpl':
-            '%(id)s.mp4',
+            '%(id)s.mkv',
             'logtostderr':
             False,
             'quiet':
