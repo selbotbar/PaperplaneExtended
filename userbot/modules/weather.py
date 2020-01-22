@@ -99,7 +99,7 @@ async def get_weather(weather):
     winddir = result['wind']['deg']
 
     ctimezone = tz(c_tz[country][0])
-    time = datetime.now(ctimezone).strftime("%A, %I:%M %p")
+    time = datetime.now(ctimezone).strftime("%A, %H:%M")
     fullc_n = c_n[f"{country}"]
 
     dirs = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
@@ -119,7 +119,7 @@ async def get_weather(weather):
         return temp[0]
 
     def sun(unix):
-        xx = datetime.fromtimestamp(unix, tz=ctimezone).strftime("%I:%M %p")
+        xx = datetime.fromtimestamp(unix, tz=ctimezone).strftime("%H:%M")
         return xx
 
     await weather.edit(
@@ -131,12 +131,13 @@ async def get_weather(weather):
         + f"**Wilgotność:** `{humidity}%`\n" +
         f"**Wiatr:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
         f"**Wschód słońca:** `{sun(sunrise)}`\n" +
-        f"**Zachód słońca:** `{sun(sunset)}`\n\n\n" + f"**{desc}**\n" +
+        f"**Zachód słońca:** `{sun(sunset)}`\n\n" + 
+        f"**{desc}**\n\n" +
         f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
 
 
 CMD_HELP.update({
     "weather":
-    ".weather <city> or .weather <city>, <country name/code>\
-    \nUsage: Gets the weather of a city."
+    ".weather <miasto> lub .weather <miasto>, <kraj nazwa/kod>\
+    \nUżycie: Wyświetla pogodę dla zadanego miejsca."
 })
