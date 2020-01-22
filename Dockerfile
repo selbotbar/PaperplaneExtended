@@ -61,7 +61,7 @@ RUN python3 -m ensurepip \
 #
 # Clone repo and prepare working directory
 #
-RUN git clone https://github.com/selbotbar/PaperplaneExtended /root/userbot
+RUN git clone -b dev https://github.com/selbotbar/PaperplaneExtended /root/userbot
 RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
 
