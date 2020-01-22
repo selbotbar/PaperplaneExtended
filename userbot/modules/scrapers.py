@@ -587,7 +587,7 @@ async def download_video(v_url):
     elif type == "video":
         opts = {
             'format':
-            'bestvideo+bestaudio/bestvideo+bestaudio',
+            'best',
             'addmetadata':
             True,
             'key':
