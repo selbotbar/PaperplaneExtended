@@ -1,0 +1,12 @@
+dist: bionic
+language: bash
+sudo: true
+
+services:
+  - docker
+
+before_install:
+- sudo apt update
+- sudo apt upgrade -y
+script:
+- docker build . --tag test
