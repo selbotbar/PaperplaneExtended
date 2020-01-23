@@ -54,8 +54,8 @@ async def mention_afk(mention):
         if ISAFK or ISAFK_SQL:
             if mention.sender_id not in USERS:
                 if EXCUSE:
-                    await mention.reply(f"I'm AFK right now.\
-                    \nReason: `{EXCUSE}`")
+                    await mention.reply(f"Jestem z dala od klawiatury.\
+                    \nPowód: `{EXCUSE}`")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
                 USERS.update({mention.sender_id: 1})
@@ -64,8 +64,8 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if EXCUSE:
                         await mention.reply(
-                            f"In case you didn't notice, I'm still AFK.\
-                        \nReason: `{EXCUSE}`")
+                            f"Nadal mnie nie ma.\
+                        \nPowód: `{EXCUSE}`")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
@@ -101,8 +101,8 @@ async def afk_on_pm(sender):
         if apprv and (ISAFK or ISAFK_SQL):
             if sender.sender_id not in USERS:
                 if EXCUSE:
-                    await sender.reply(f"I'm AFK right now.\
-                    \nReason: `{EXCUSE}`")
+                    await sender.reply(f"Jestem z dala od klawiatury.\
+                    \nPowód: `{EXCUSE}`")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
                 USERS.update({sender.sender_id: 1})
@@ -111,8 +111,8 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if EXCUSE:
                         await sender.reply(
-                            f"In case you didn't notice, I'm still AFK.\
-                        \nReason: `{EXCUSE}`")
+                            f"Nadal mnie nie ma.\
+                        \nPowód: `{EXCUSE}`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
@@ -139,11 +139,11 @@ async def set_afk(afk_e):
             addgvar("AFK_REASON", string)
         AFKREASON = string
         await afk_e.edit(f"Jestem z dala od klawiatury.\
-        \nNie ma mnie bo: `{string}`")
+                    \nPowód: `{string}`")
     else:
-        await afk_e.edit("Going AFK!")
+        await afk_e.edit("AFK: Musze kończyć , narazie!")
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
+        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nAFCZYSZ SUKO!")
     if afk_db:
         addgvar("AFK_STATUS", True)
     ISAFK = True

@@ -30,7 +30,7 @@ async def magisk(request):
         "Canary (Debug)":
         "https://raw.githubusercontent.com/topjohnwu/magisk_files/canary/debug.json"
     }
-    releases = 'Latest Magisk Releases:\n'
+    releases = 'Najnowsze wydania Magisk:\n'
     for name, release_url in magisk_dict.items():
         data = get(release_url).json()
         releases += f'{name}: [ZIP v{data["magisk"]["version"]}]({data["magisk"]["link"]}) | ' \
@@ -181,9 +181,9 @@ async def twrp(request):
     dl_file = download.text
     size = page.find("span", {"class": "filesize"}).text
     date = page.find("em").text.strip()
-    reply = f'**Latest TWRP for {device}:**\n' \
+    reply = f'**Najnowsze TWRP dla {device}:**\n' \
         f'[{dl_file}]({dl_link}) - __{size}__\n' \
-        f'**Updated:** __{date}__\n'
+        f'**Zaktualizowano:** __{date}__\n'
     await request.edit(reply)
 
 
