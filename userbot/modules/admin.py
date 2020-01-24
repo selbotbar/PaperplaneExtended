@@ -533,7 +533,7 @@ async def gspider(gspdr):
                 f"CHAT: {gspdr.chat.title}(`{gspdr.chat_id}`)")
 
 
-@register(outgoing=True, pattern="^\.zombies(?: |$)(.*)", groups_only=True)
+@register(outgoing=True, pattern="^\.delusers(?: |$)(.*)", groups_only=True)
 async def rm_deletedacc(show):
     """ For .delusers command, list all the ghost/deleted accounts in a chat. """
     if not show.is_group:
@@ -551,7 +551,7 @@ async def rm_deletedacc(show):
                 await sleep(1)
         if del_u > 0:
             del_status = f"Found **{del_u}** deleted account(s) in this group,\
-            \nclean them by using `.zombies clean`"
+            \nclean them by using `.delusers clean`"
 
         await show.edit(del_status)
         return
